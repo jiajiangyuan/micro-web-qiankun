@@ -13,7 +13,6 @@ export default defineConfig({
   server: {
     port: 5800,
     proxy: {
-      // 正则表达式写法：http://localhost:5173/fallback/ -> http://jsonplaceholder.typicode.com/
       "^/fallback/.*": {
         target: "http://jsonplaceholder.typicode.com",
         changeOrigin: true,
@@ -33,6 +32,7 @@ export default defineConfig({
         ws: true,
       },
     },
+    origin: 'http://localhost:5800',  //项目baseUrl，解决主应用中出现静态地址404问题
   },
   resolve: {
     //设置路径别名

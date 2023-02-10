@@ -81,6 +81,7 @@ module.exports = {
     index: path.resolve(ROOT_PATH, "./src/index.tsx"),
   },
   output: {
+    publicPath: process.env.NODE_ENV === 'development' ? '/' : '/meta/2/',
     path: path.resolve(ROOT_PATH, "./build"),
     library: `${name}`,
     libraryTarget: 'umd'

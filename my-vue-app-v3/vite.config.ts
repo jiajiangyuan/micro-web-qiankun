@@ -11,6 +11,7 @@ export default defineConfig({
   ],
   server: {
     port: 5900,
+    origin: 'http://localhost:5900'  //项目baseUrl，解决主应用中出现静态地址404问题
   },
   resolve: {
     //设置路径别名
