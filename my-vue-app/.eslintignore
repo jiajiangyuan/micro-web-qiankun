@@ -1,0 +1,11 @@
+src/assets
+src/icons
+public
+node_modules
+dist
+.idea
+.vs
+src/views/approval
+src/components/flows
+src/components/header
+src/components/form

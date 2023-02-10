@@ -1,0 +1,14 @@
+{
+  "name": "micro-web-qiankun",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cd ./viteApp && yarn dev",
+    "dev:vue": "cd ./my-vue-app && yarn dev",
+    "dev:vueV3": "cd ./my-vue-app-v3 && yarn dev",
+    "dev:react": "cd ./react-webpack && yarn start"
+  },
+  "author": "",
+  "license": "ISC"
+}
