@@ -18,7 +18,7 @@ module.exports = merge(common, {
     host: SERVER_HOST,
     port: SERVER_PORT,
     compress: true, // gzip压缩
-    open: true, // 自动打开默认浏览器
+    open: false, // 自动打开默认浏览器
     hot: false, // 启用服务热替换配置
     headers: {
       'Access-Control-Allow-Origin': '*',

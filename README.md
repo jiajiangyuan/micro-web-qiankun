@@ -1,7 +1,7 @@
 ## 项目简介
 
     基于 React + Antd + Ts + qiankun + vue 的微前端基础框架
-
+   [![](public/img.png)]()
 ## 技术依赖
 
 - React -（UI 框架）
@@ -69,3 +69,4 @@ yarn dev:vue
 yarn dev:vueV3
 yarn dev:react
 ```
+

@@ -7,6 +7,7 @@ export default defineConfig({
   plugins: [react()],
   server: {
     port: 5500,
+    open: true,
     proxy: {
       // 正则表达式写法：http://localhost:5173/fallback/ -> http://jsonplaceholder.typicode.com/
       "^/fallback/.*": {
