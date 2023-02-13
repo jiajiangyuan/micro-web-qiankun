@@ -11,7 +11,7 @@
 - Webpack、Vite （构建工具）
 - react-router-dom、vue-router （ 路由 ）
 - less
-- - React -（微前端库）
+- qiankun-（微前端库）
 
 ## 目录结构
 ```
