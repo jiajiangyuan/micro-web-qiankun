@@ -6,6 +6,7 @@ import {
   qiankunWindow,
 } from "vite-plugin-qiankun/dist/helper";
 import router from "./router/index.js";
+import actions from "./utils/actions";
 
 const render = (props) => {
   const app = createApp(App);
@@ -22,6 +23,14 @@ const initQianKun = () => {
     mount(props) {
       // 获取主应用传入数据
       console.log("微应用：mount", props);
+
+      props.onGlobalStateChange((state, prev) => {
+        // state: 变更后的状态; prev 变更前的状态
+        console.log("这是主应用传来的值", state, prev);
+      }, true); //第二个参数为 true，表示立即执行一次观察者函数
+
+      actions.setActions(props); //子项目的入口文件中设置子应用的全局state
+
       render(props);
     },
     unmount(props) {

@@ -18,7 +18,7 @@ const Index = () => {
   useEffect(() => {
     const list = routes.find((item) => item.path === "/");
     const menu = renderMenu(list?.children).filter((item) => item);
-    console.log(menu);
+
     setMenus(menu);
     // 启动qiankun
     start({

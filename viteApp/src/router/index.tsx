@@ -4,9 +4,6 @@ import { Spin } from "antd";
 import { routes } from "./config";
 
 const RouterComponent = () => {
-  // const element = useRoutes(routes);
-  // return <>{element}</>;
-
   const renderRouter = (router: any[]) => {
     return router.map((item, index) => {
       if (!item.path) {

@@ -41,7 +41,7 @@ export const routes: RoutesType[] = [
           },
           {
             path: "/vue/profile",
-            label: "Vue-profile",
+            label: "与主页面通信",
           },
         ],
       },
@@ -52,10 +52,6 @@ export const routes: RoutesType[] = [
           {
             path: "/vue-ts/vue-home",
             label: "vue-ts-home",
-          },
-          {
-            path: "/vue-ts/vue-profile",
-            label: "vue-ts-profile",
           },
         ],
       },

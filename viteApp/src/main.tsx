@@ -2,7 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import "./index.css";
-import { registerMicroApps } from "qiankun";
+import {
+  registerMicroApps,
+  initGlobalState,
+  MicroAppStateActions,
+} from "qiankun";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
@@ -31,3 +35,16 @@ registerMicroApps([
     activeRule: "/react-app",
   },
 ]);
+
+// 初始化 state
+const actions: MicroAppStateActions = initGlobalState({
+  show: false,
+  msg: "",
+});
+
+actions.onGlobalStateChange((state, prev) => {
+  // state: 变更后的状态; prev 变更前的状态
+  if (state.show) {
+    alert(state.msg);
+  }
+});
