@@ -3,6 +3,7 @@ import { UserOutlined } from "@ant-design/icons";
 
 const Layouts = lazy(() => import("@/layouts/index"));
 const Home = lazy(() => import("@/pages/Home"));
+const Login = lazy(() => import("@/pages/Login"));
 
 export type RoutesType = {
   icon?: React.ReactNode;
@@ -66,6 +67,12 @@ export const routes: RoutesType[] = [
         ],
       },
     ],
+  },
+  {
+    path: "/login",
+    label: "登录",
+    element: <Login />,
+    hideMenu: true,
   },
   {
     path: "/404",

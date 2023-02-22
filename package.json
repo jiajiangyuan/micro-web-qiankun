@@ -10,5 +10,9 @@
     "dev:react": "cd ./react-webpack && yarn start"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@ant-design/pro-components": "^2.3.57",
+    "antd": "^5.2.2"
+  }
 }
