@@ -1,9 +1,10 @@
 import React, { lazy } from "react";
 import { UserOutlined } from "@ant-design/icons";
 
-const Layouts = lazy(() => import("@/layouts/index"));
-const Home = lazy(() => import("@/pages/Home"));
-const Login = lazy(() => import("@/pages/Login"));
+const Layouts = lazy(() => import("@/layouts/index")); // 公共页容器
+const Home = lazy(() => import("@/pages/Home")); // 首页
+const Login = lazy(() => import("@/pages/Login")); // 登录
+const BlogList = lazy(() => import("@/pages/Blogs/BlogList")); // 博客列表
 
 export type RoutesType = {
   icon?: React.ReactNode;
@@ -14,6 +15,7 @@ export type RoutesType = {
   hideMenu?: boolean; // 是否显示到菜单中
   from?: string;
   to?: string; // 跳转地址
+  index?: boolean;
 };
 
 export const routes: RoutesType[] = [
@@ -31,6 +33,17 @@ export const routes: RoutesType[] = [
         label: "首页",
         path: "/home",
         element: <Home />,
+      },
+      {
+        label: "博客",
+        path: "/blog",
+        children: [
+          {
+            path: "/blog/list",
+            label: "博客列表",
+            element: <BlogList />,
+          },
+        ],
       },
       {
         path: "/vue",

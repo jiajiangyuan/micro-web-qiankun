@@ -17,6 +17,7 @@ import type { CSSProperties } from "react";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import style from "./index.module.less";
+import { userLogin } from "@/api/login/loginApi";
 
 type LoginType = "phone" | "account";
 
@@ -33,9 +34,14 @@ const Login = () => {
 
   // 登录
   const onFinish = async (value: any) => {
-    console.log(value);
-    history("/", {
-      replace: true,
+    userLogin(value).then((res) => {
+      console.log(res);
+      if (res.error_code === 0) {
+        history("/", {
+          replace: true,
+        });
+        return;
+      }
     });
   };
 

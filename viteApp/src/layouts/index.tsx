@@ -18,7 +18,6 @@ const Index = () => {
   useEffect(() => {
     const list = routes.find((item) => item.path === "/");
     const menu = renderMenu(list?.children).filter((item) => item);
-
     setMenus(menu);
     // 启动qiankun
     start({
@@ -51,9 +50,21 @@ const Index = () => {
     });
   };
 
-  const onSelect = ({ key }: any) => {
+  // 跳转路由
+  const onSelect = ({ key }: { key: string }) => {
     setSelect(key);
     navigate(key);
+  };
+
+  // 初始化默认key
+  const defaultOpenKeys = () => {
+    const arr = [];
+    const key =
+      location.pathname.split("/").filter((item) => item !== "")[0] || null;
+    if (key) {
+      arr.push(`/${key}`);
+    }
+    return arr;
   };
 
   return (
@@ -79,7 +90,7 @@ const Index = () => {
         <Menu
           theme="dark"
           mode="inline"
-          defaultOpenKeys={[selected]}
+          defaultOpenKeys={defaultOpenKeys()}
           defaultSelectedKeys={[selected]}
           items={menus}
           inlineCollapsed={false}
